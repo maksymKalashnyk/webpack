@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/assets/*', 'public/js/app.js')
     .vue()
     .sass('resources/sass/app.scss', 'public/css')
+    .copy('resources/image/default.png', 'storage/app/public')
     .sourceMaps();

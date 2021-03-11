@@ -13,7 +13,6 @@
         "axios": "^0.21",
         "bootstrap": "^4.0.0",
         "jquery": "^3.2",
-        "jquery.inputmask": "^3.3.4",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
@@ -26,6 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "inputmask": "^5.0.5",
         "moment": "^2.29.1",
         "v-mask": "^2.2.4",
         "vue-cookies": "^1.7.4",

@@ -19,7 +19,7 @@
           <td>
             <img
               v-if="profile.photo === null"
-              src="https://via.placeholder.com/100"
+              :src="'/storage/default.png'"
               class="img-thumbnail"
             />
             <img

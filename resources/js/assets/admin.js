@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $(".nav-treeview .nav-link, .nav-link").each(function () {
         var location2 = window.location.protocol + '//' + window.location.host + window.location.pathname;
@@ -16,12 +17,16 @@ $(document).ready(function () {
         }
     });
 
-    $('#phone').inputmask('+9 (999) 999-9999');
-
     $('#photo').bind('change', function() {
         if (this.files[0].size >= 2000000) {
             alert('File size must be up to 2 mb');
             this.value = ''
         }
     });
+
 })
+
+var selector = document.getElementById("phone");
+
+var im = new Inputmask('+9 (999) 999-9999');
+im.mask(selector);
