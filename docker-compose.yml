@@ -1,0 +1,40 @@
+version: "3.5"
+
+services:
+  laravel-app:
+    build:
+      context: "."
+      args:
+        uid: ${UID}
+    container_name: laravel-app
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${UID}
+      - PHP_EXTENSION_XDEBUG=1
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8000:80
+    networks:
+      backend:
+        aliases:
+          - laravel-app
+
+  db:
+    image: mysql:5.7
+    container_name: db
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./run/var:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=laravelForm
+      - MYSQL_PASSWORD=password
+    networks:
+      backend:
+        aliases:
+          - db
+
+networks:
+  backend:
+    name: backend-network
